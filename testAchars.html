@@ -22,29 +22,36 @@
         require(
             [
                 'echarts',
-                'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/line' // 使用柱状图就加载bar模块，按需加载
             ],
             function(ec) {
                 // 基于准备好的dom，初始化echarts图表
                 var myChart = ec.init(document.getElementById('main'));
 
                 var option = {
+                    // 提示框
                     tooltip: {
                         show: true
                     },
+                    // 图例
                     legend: {
                         data: ['销量']
                     },
+                    // 横轴
                     xAxis: [{
                         type: 'category',
                         data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
                     }],
+                    // 纵轴
                     yAxis: [{
                         type: 'value'
                     }],
+                    // 名字
+                    // 显示类型
+                    // 数据
                     series: [{
                         "name": "销量",
-                        "type": "bar",
+                        "type": "line",
                         "data": [5, 20, 40, 10, 10, 20]
                     }]
                 };
